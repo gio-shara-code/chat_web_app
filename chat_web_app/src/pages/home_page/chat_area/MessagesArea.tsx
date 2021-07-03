@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react'
 import { SelectedMessageIdContext } from '../../../context/selected_contact_id_context'
-import { UserContext } from '../../../context/user_context'
+import { TokenContext } from '../../../context/token_context'
 import MessageText from './message_containers/MessageText'
 import { dummyMessages } from './dummy_messages'
 import { MessageType } from '../../../enums/message_type'
@@ -8,7 +8,7 @@ import { Message } from '../../../interfaces/message'
 
 const MessagesArea = () => {
     const selectedMessageId = useContext(SelectedMessageIdContext)
-    const user = useContext(UserContext)
+    const user = useContext(TokenContext)
     const [messages, setMessages] = useState<Message[]>(dummyMessages)
 
     const componentDidMount = () => {
@@ -19,11 +19,12 @@ const MessagesArea = () => {
     useEffect(componentDidMount, [])
 
     return (
-        <div className="flex-1 flex flex-col bg-green-100">
-            {dummyMessages.map((message: Message) => {
+        <div className="flex-1 flex flex-col justify-end overflow-y-auto">
+            {messages.map((message: Message) => {
                 switch (message.type) {
                     case MessageType.message:
-                        return <MessageText key={message.id} itsMe={user.value.id === message.sentFromId} message={message} withProfile={false} />
+                        return <div>Hello World</div>
+                    // return <MessageText key={message.id} itsMe={user.value.id === message.sentFromId} message={message} withProfile={false} />
                     case MessageType.video:
                         return
                     case MessageType.image:

@@ -1,11 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import AvatarImage from '../../components/AvatarImage'
 import OptionIcon from '../../assets/icons/option.svg'
-import { UserContext } from '../../context/user_context'
+import { TokenContext } from '../../context/token_context'
 import DropdownStatus from '../../components/dropdown_status/DropdownStatus'
+import { User } from '../../interfaces/user'
 const profileContainer = () => {
-    const user = useContext(UserContext)
+    // const user = useContext(TokenContext)
+    const [user, setUser] = useState<User>()
 
+    const componentDidMount = () => {
+        //get use info
+    }
+
+    useEffect(componentDidMount, [])
     return (
         <div className="pb-4">
             <div className="flex justify-center items-center bg-hell-blue p-8 rounded-b-3xl">
@@ -16,9 +23,10 @@ const profileContainer = () => {
                 <div className="flex-1 flex flex-col justify-center items-start">
                     <div className="flex justify-between w-full">
                         <h2 className="text-2xl font-poppins font-semibold text-black-hell">
-                            {user.value.firstname} {user.value.lastname}
+                            {/* {user.value.firstname} {user.value.lastname} */}
+                            Giorgi Sharashendze
                         </h2>
-                        <OptionIcon className="cursor-pointer"/>
+                        <OptionIcon className="cursor-pointer" />
                     </div>
 
                     <DropdownStatus />

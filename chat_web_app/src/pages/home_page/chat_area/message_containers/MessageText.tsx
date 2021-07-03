@@ -10,7 +10,7 @@ interface Props {
 
 const MessageText: React.FC<Props> = ({ message, itsMe }) => {
     return (
-        <div className={`flex flex-col justify-end items-${itsMe ? 'end' : 'start'} p-3`}>
+        <div className={`flex flex-col items-${itsMe ? 'end' : 'start'} p-3`}>
             <div>{message.author}</div>
 
             <div className={`flex flex-col items-${itsMe ? 'end' : 'start'} bg-${itsMe ? 'red-200' : 'hell-blue'} p-5 max-w-screen-sm rounded-2xl rounded-t${itsMe ? 'r' : 'l'}-none`}>
