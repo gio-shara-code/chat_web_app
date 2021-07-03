@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "esModuleInterop": true,
+        "lib": ["dom"],
+        "jsx": "react",
+        "strict": true,
+        "typeRoots": ["./src/@types", "./node_modules/@types"]
+    }
+}

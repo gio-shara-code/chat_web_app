@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Web App</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .parent {
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+    }
+
+    .child {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        background-color: aqua;
+        margin: 1px 0;
+    }
+
+    #child2 {}
+
+    #text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+
+<body>
+    <div class="parent">
+
+        <div class="child">
+            <p>1</p>
+            <p>2</p>
+        </div>
+        
+        <div id="child2" class="child">
+            <div id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptates id soluta
+                culpa commodi
+                sint temporibus debitis, nisi fugit sequi, veniam deleniti quo suscipit. Minima magnam debitis
+                repudiandae sint fuga!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed ipsa qui natus, fugiat minima vero beatae
+                eligendi officiis, consequatur nostrum ipsum. Voluptatibus cum facilis, hic animi cumque provident
+                dolorum pariatur.</div>
+            <div>
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3TqZHtXMWf4nWJ8A1jlyOnOsT7suxzwsHNA&usqp=CAU">
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
