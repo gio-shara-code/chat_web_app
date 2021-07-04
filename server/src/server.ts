@@ -1,23 +1,20 @@
-import {Socket, Server} from "socket.io"
-import * as http from "http"
 import express from "express"
+import config from "./config"
+import {initLoaders} from "./loaders/loaders"
+import * as http from "http"
 
-const app = express()
-const server = http.createServer(app)
+const startServer = async () => {
+  const app = express()
+  const server = http.createServer(app)
 
-const io = new Server(server, {
-  cors: {
-    origin: "*"
-  }
-})
+  await initLoaders(app, server)
 
-io.on("connection", (socket: Socket) => {
-  console.log(socket.handshake.auth)
-  socket.on("messaging", (msg) => {
-    console.log(msg)
+  server.listen(config.port, () => {
+    console.log(`The server is running on the port ${config.port}`)
   })
-})
+  return app
+}
 
-const port = process.env.PORT || 3000
+startServer()
 
-server.listen(port, () => console.log(`Listening the port ${port}`))
+export {startServer}
