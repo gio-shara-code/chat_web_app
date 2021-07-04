@@ -1,11 +1,10 @@
 import { Status } from '../enums/status'
 
-interface User {
-    id: string
-    firstname: string
-    lastname: string
-    status: Status
-    profileImage?: string
+export interface User {
+    email: string
+    fullName: string
+    status?: Status
+    password?: string
+    createdOn?: number
+    _id?: string
 }
-
-export { User }
