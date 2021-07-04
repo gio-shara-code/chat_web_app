@@ -17,31 +17,34 @@ const App = () => {
                         exact
                         path="/register"
                         render={() => {
-                            return token ? <Redirect to="/home" /> : <RegisterPage />
+                            return token ? <HomePage /> : <RegisterPage />
                         }}
                     />
                     <Route
                         exact
                         path="/login"
                         render={() => {
-                            return token ? <Redirect to="/home" /> : <LoginPage />
+                            return token ? <HomePage /> : <LoginPage />
                         }}
                     />
                     <Route
                         exact
                         path="/home"
                         render={() => {
-                            return token ? <Redirect to="/home" /> : <HomePage />
+                            return token ? <HomePage /> : <LoginPage />
                         }}
                     />
                     <Route
                         exact
                         path="/"
                         render={() => {
-                            console.log(token)
-                            return token ? <Redirect to="/home" /> : <Redirect to="/login" />
+                            return token ? <HomePage /> : <LoginPage />
                         }}
                     />
+
+                    <Route path="/">
+                        <div className="flex justify-center items-center w-full h-full text-2xl text-red-500">Page not found</div>
+                    </Route>
                 </Switch>
             </BrowserRouter>
         </TokenContext.Provider>
