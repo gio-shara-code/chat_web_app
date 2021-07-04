@@ -3,6 +3,11 @@ module.exports = {
     darkMode: false,
     theme: {
         extend: {
+            textColor: {
+                'black-hell': '#52585D',
+                white: '#FDFDFE',
+                gray: '#96A9BA',
+            },
             padding: {
                 20: '20px',
             },
@@ -34,11 +39,6 @@ module.exports = {
             '1/2': '50%',
             '3/4': '75%',
             full: '100%',
-        },
-        textColor: {
-            'black-hell': '#52585D',
-            white: '#FDFDFE',
-            gray: '#96A9BA',
         },
 
         backgroundColor: (theme) => ({
