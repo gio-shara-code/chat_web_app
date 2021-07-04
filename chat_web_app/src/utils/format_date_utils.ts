@@ -1,7 +1,9 @@
 const formatDateNumberToDayMonthYear = (dateNumber: number) => {
     const date = new Date(dateNumber)
-    let d: number | string = date.getDay()
-    let m: number | string = date.getMonth()
+    let d: number | string = date.getDate()
+    let m: number| string = date.getMonth() + 1
+
+    console.log(d)
     let y = date.getFullYear()
     if (d <= 1 || d <= 9) d = `0${d}`
     if (m <= 1 || m <= 9) m = `0${m}`
