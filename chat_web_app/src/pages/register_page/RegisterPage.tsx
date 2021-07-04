@@ -20,7 +20,7 @@ const RegisterPage = () => {
 
     const onPasswordChange = (e: any) => setPassword(e.target.value)
     const onFullNameChange = (e: any) => setFullName(e.target.value)
-    const onLoginInButtonClick = async () => {
+    const onRegisterButtonClick = async () => {
         const user: User = {
             email: email,
             fullName: fullName,
@@ -57,7 +57,7 @@ const RegisterPage = () => {
             <br />
 
             <div className="text-center">
-                <button className="border-2 border-black px-2" onClick={onLoginInButtonClick}>
+                <button className="border-2 border-black px-2" onClick={onRegisterButtonClick}>
                     Register
                 </button>
             </div>
