@@ -1,17 +1,45 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { login } from '../../api/auth_api'
 import PrimaryInput from '../../components/inputs/PrimaryInput'
-const LoginPage = () => {
-    const [email, setEmail] = useState<string>('gio.sharashenidze@code.berlin')
+import { ApiResponse } from '../../interfaces/api_response'
 
+import { TokenContext } from '../../context/token_context'
+
+const LoginPage = () => {
+    const token = useContext(TokenContext)
+
+    const [email, setEmail] = useState<string>('gio.sharashenidze@code.berlin')
     const [password, setPassword] = useState<string>('123456')
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [error, setError] = useState<string>('')
 
     const onEmailChange = (e: any) => setEmail(e.target.value)
 
     const onPasswordChange = (e: any) => setPassword(e.target.value)
 
-    const onLoginInButtonClick = () => {
-        //Make login request and get token
+    const toggleLoadingProcess = () => setIsLoading((isLoading) => !isLoading)
+
+    const onLoginInButtonClick = async () => {
+        const user = {
+            email: email,
+            password: password,
+        }
+
+        toggleLoadingProcess()
+        const resData: ApiResponse = await login(user)
+
+        if (resData.success) {
+            token.set(resData.token as string)
+        } else {
+            setError(resData.message as string)
+            toggleLoadingProcess()
+        }
     }
+
+    if (isLoading) {
+        return <div className="flex justify-center items-center w-full h-full text-2xl">Loading...</div>
+    }
+
     return (
         <div className="flex flex-col px-3 pt-24">
             <br />
@@ -28,6 +56,7 @@ const LoginPage = () => {
                     Login
                 </button>
             </div>
+            {error && <div className="text-red-500">{error}</div>}
         </div>
     )
 }
