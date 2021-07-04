@@ -8,13 +8,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 const App = () => {
     const { token, setToken } = useToken()
-    // const [user, setUser] = useState<User>({
-    //     firstname: 'Mehmet',
-    //     lastname: 'Revnaki',
-    //     id: '21dc1c51-cf94-4c4d-b9a6-e69a3f38a888',
-    //     status: 'working',
-    //     profileImage: 'https://cdn.luxe.digital/media/2019/09/12084906/casual-dress-code-men-street-style-luxe-digital-1.jpg',
-    // })
+
     return (
         <TokenContext.Provider value={{ value: token, set: setToken }}>
             <BrowserRouter>
@@ -23,7 +17,7 @@ const App = () => {
                         exact
                         path="/register"
                         render={() => {
-                            return token ? <Redirect to="/home" /> : <RegisterPage setToken={setToken} />
+                            return token ? <Redirect to="/home" /> : <RegisterPage />
                         }}
                     />
                     <Route
