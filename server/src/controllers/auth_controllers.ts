@@ -4,27 +4,28 @@ import UserModel from "../models/user_model"
 import {hashPassword, comparePassword} from "../services/bcrypt"
 import {signToken} from "../services/jwt"
 import {User} from "../interfaces/user"
+import {Status} from "../enums/status"
+import {ResponseBody} from "../interfaces/response_body"
 
-const register = async (req: Request, res: Response) => {
+const register = async (req: Request, res: Response<ResponseBody>) => {
   const {email, password, name} = req.body
 
   let token: string
   try {
-    if (!email || !password || !name)
-      throw new Error("Please provide neccessary fields for the registration!")
+    if (!email || !password || !name) throw new Error("Please provide neccessary fields for the registration!")
 
     const hashedPassword = await hashPassword(password)
     if (!hashedPassword) throw new Error("Internal server error: registering user failed.")
 
-    if (await userServices.getUserByEmail(email))
-      throw new Error(`User with the email ${email} exists already`)
+    if (await userServices.getUserByEmail(email)) throw new Error(`User with the email ${email} exists already`)
 
     const userDoc = await userServices.saveUser(
       new UserModel({
         email: email,
         password: hashedPassword,
         createdOn: Date.now(),
-        name: name
+        name: name,
+        status: Status.available
       })
     )
 
@@ -43,7 +44,7 @@ const register = async (req: Request, res: Response) => {
   res.status(200).json({success: true, token: token})
 }
 
-const login = async (req: Request, res: Response) => {
+const login = async (req: Request, res: Response<ResponseBody>) => {
   const {email, password} = req.body
 
   let token: string
