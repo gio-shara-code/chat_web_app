@@ -11,14 +11,11 @@ const searchTab = () => {
 
     const toggleLoadingProcess = () => setLoading((isLoading) => !isLoading)
 
-    const onSearchContactInputChange = (e: any) => {
-        setSearchContactName(e.target.value)
-    }
+    const onSearchContactInputChange = (e: any) => setSearchContactName(e.target.value)
 
     const onSearchContactInputKeyDown = (e: any) => {
         if (e.code === 'Enter') {
             //Search for contacts
-
             toggleLoadingProcess()
 
             setTimeout(() => {
