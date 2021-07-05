@@ -20,10 +20,11 @@ const MessagesArea = () => {
 
     return (
         <div className="flex-1 flex flex-col justify-end overflow-y-auto">
-            {messages.map((message: Message) => {
+            {messages.map((message: Message, index: number) => {
                 switch (message.type) {
                     case MessageType.message:
-                        return <div>Hello World</div>
+                        return <div key={index}></div>
+                    // return <div>Hello World</div>
                     // return <MessageText key={message.id} itsMe={user.value.id === message.sentFromId} message={message} withProfile={false} />
                     case MessageType.video:
                         return
