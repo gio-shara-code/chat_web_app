@@ -11,7 +11,7 @@ interface Props {
 }
 
 const contactCard: React.FC<Props> = ({ isCurrentCard = false, contact, onClick }) => {
-    return (    
+    return (
         <div className="w-full py-4 ">
             <div className={`flex rounded-2xl p-4 ${isCurrentCard && 'bg-dark-blue'} cursor-pointer`} onClick={onClick}>
                 <div className="pr-4">
@@ -19,9 +19,7 @@ const contactCard: React.FC<Props> = ({ isCurrentCard = false, contact, onClick 
                 </div>
                 <div className="flex-1 flex flex-col overflow-hidden">
                     <div className="flex justify-between">
-                        <h2 className={`text-xl font-poppins font-semibold ${isCurrentCard ? 'text-white' : 'text-black'}`}>
-                            {contact.firstname} {contact.lastname}
-                        </h2>
+                        <h2 className={`text-xl font-poppins font-semibold ${isCurrentCard ? 'text-white' : 'text-black'}`}>{contact.name}</h2>
                         <p className={`${isCurrentCard ? 'text-white' : 'text-gray'}`}>{formatDateNumberToDayMonthYear(contact.lastMessageDateNumber)}</p>
                     </div>
                     <div className="flex items-center justify-between">
