@@ -46,4 +46,25 @@ const getUserByEmail = async (req: Request, res: Response<ResponseBody>) => {
   })
 }
 
-export {getUser, getUserByEmail}
+const getUsersByName = async (req: Request, res: Response<ResponseBody>) => {
+  const {name} = req.query
+  let users: User[]
+
+  try {
+    if (!name) throw new Error("User are missing name field")
+    users = (await userServices.getUsersByName(name as string)) as User[]
+    if (!users) throw new Error("Internal Error: The system couldn't retrieve the users")
+  } catch (e) {
+    return res.json({
+      success: false,
+      message: e.message
+    })
+  }
+
+  res.status(200).json({
+    success: true,
+    users: users
+  })
+}
+
+export {getUser, getUserByEmail, getUsersByName}
