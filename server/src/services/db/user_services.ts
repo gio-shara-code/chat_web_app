@@ -41,4 +41,17 @@ const saveUser = async (user: User & Document) => {
   return userDoc
 }
 
-export {getUserById, getUserByEmail, saveUser}
+const getUsersByName = async (name: string) => {
+  let users
+
+  try {
+    users = await UserModel.find({name: {$regex: name}})
+  } catch (e) {
+    console.log(`Getting users by names failed: ${e}`)
+    return
+  }
+
+  return users
+}
+
+export {getUserById, getUserByEmail, saveUser, getUsersByName}
