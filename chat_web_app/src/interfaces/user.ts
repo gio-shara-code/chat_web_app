@@ -2,7 +2,7 @@ import { Status } from '../enums/status'
 
 export interface User {
     email: string
-    fullName: string
+    name: string
     status?: Status
     password?: string
     createdOn?: number
