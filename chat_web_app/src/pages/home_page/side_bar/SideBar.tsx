@@ -8,13 +8,13 @@ import FavoriteTab from './side_bar_tabs/favorite_tab/FavoriteTab'
 import SearchTab from './side_bar_tabs/search_tab/SearchTab'
 
 const SideBar = () => {
-    const [currentTab, setCurrentTab] = useState<Tab>(Tab.messageContactTab)
+    const [currentTab, setCurrentTab] = useState<Tab>(Tab.messageContacts)
     const onNavBarButtonClick = (tab: Tab) => setCurrentTab(tab)
 
     return (
         <aside className="flex flex-col w-1/6 min-w-450">
             <ProfileContainer />
-            {Tab.messageContactTab === currentTab && <MessagedContactsTab />}
+            {Tab.messageContacts === currentTab && <MessagedContactsTab />}
             {Tab.contacts === currentTab && <ContactsTab />}
             {Tab.search === currentTab && <SearchTab />}
             {Tab.favorite === currentTab && <FavoriteTab />}
