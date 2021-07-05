@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./dist/server.js",
     "tsc:build": "tsc",
     "tsc:watch": "tsc --watch",
     "dev": "nodemon [main]",
-    "start": "tsc && node ./out/server.js",
-    "client": "tsc && node ./out/client.js"
+    "client": "tsc && node ./dist/client.js"
   },
   "author": "Giorgi Sharashenidze",
   "license": "MIT",
