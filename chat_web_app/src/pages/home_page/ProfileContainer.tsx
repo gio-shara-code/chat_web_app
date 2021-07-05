@@ -14,7 +14,7 @@ const profileContainer = () => {
         <div className="pb-4">
             <div className="flex justify-center items-center bg-hell-blue p-8 rounded-b-3xl">
                 <div className="pr-4">
-                    <AvatarImage src="https://cdn.luxe.digital/media/2019/09/12084906/casual-dress-code-men-street-style-luxe-digital-1.jpg" alt="My profile image" />
+                    <AvatarImage height="h-55" width="w-55" src="https://cdn.luxe.digital/media/2019/09/12084906/casual-dress-code-men-street-style-luxe-digital-1.jpg" alt="My profile image" />
                 </div>
 
                 <div className="flex-1 flex flex-col justify-center items-start">
