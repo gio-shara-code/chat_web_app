@@ -4,7 +4,7 @@ import SearchIcon from '../assets/icons/search.svg'
 import ContactsIcon from '../assets/icons/contacts.svg'
 
 enum Tab {
-    messageContactTab = 'messageContactTab',
+    messageContact = 'messageContact',
     contacts = 'contacts',
     favorite = 'favorite',
     search = 'search',
@@ -12,7 +12,7 @@ enum Tab {
 
 const getIconBasedInTabEnum = (tab: Tab) => {
     switch (tab) {
-        case Tab.messageContactTab:
+        case Tab.messageContact:
             return ContactIcon
         case Tab.contacts:
             return ContactsIcon
