@@ -4,7 +4,7 @@ import {verifyToken} from "../middlewares/verify_token"
 
 const router = Router()
 
-router.get("/user", verifyToken, userControllers.getUser)
-router.get("/user", verifyToken, userControllers.getUserByEmail)
+router.get("/user", verifyToken, userControllers.getUser, userControllers.getUserByEmail)
+router.get("/users", verifyToken, userControllers.getUsersByName)
 
 export default router
