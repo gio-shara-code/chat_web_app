@@ -5,4 +5,5 @@ export interface ResponseBody {
   message?: string
   token?: string
   user?: User
+  users?: User[]
 }
