@@ -1,6 +1,5 @@
 import {model, Schema, Document} from "mongoose"
 import {User} from "../interfaces/user"
-//When creating a document
 
 const userSchema = new Schema({
   email: {type: String, required: true, unique: true},
