@@ -1,11 +1,12 @@
 import React from 'react'
 
+interface TokenContextInterface {
+    value: string | null
+    set(t: string): void
+}
 const context = React.createContext({
     value: '',
-    set: (token) => {},
-} as {
-    value: string | null
-    set(user: string): void
-})
+    set: (t) => {},
+} as TokenContextInterface)
 
 export { context as TokenContext }
