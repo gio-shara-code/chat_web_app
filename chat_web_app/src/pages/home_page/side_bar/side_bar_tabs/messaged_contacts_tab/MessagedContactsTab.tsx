@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import ContactList from './contact_list/ContactList'
 import CustomScrollBar from './CustomScrollBar'
 
-const contactTab = () => {
+const MessagedContactsTab = () => {
     const contactListDivRef = useRef<HTMLDivElement>(null)
     const [topPadding, setTopPadding] = useState<number>(0)
     const [scrollIndicatorHeight, setScrollIndicatorHeight] = useState<number>(0)
@@ -64,4 +64,4 @@ const contactTab = () => {
     )
 }
 
-export default contactTab
+export default MessagedContactsTab
