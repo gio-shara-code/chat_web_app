@@ -45,7 +45,7 @@ const getUsersByName = async (name: string) => {
   let users
 
   try {
-    users = await UserModel.find({name: {$regex: name}})
+    users = await UserModel.find({name: {$regex: new RegExp(name), $options: "i"}})
   } catch (e) {
     console.log(`Getting users by names failed: ${e}`)
     return
