@@ -1,13 +1,10 @@
-import { Status } from '../enums/status'
+import { Status } from "../enums/status";
 
-interface Contact {
-    firstname: string
-    lastname: string
+export interface Contact {
+    name: string
+    lastMessageSeen: boolean
     lastMessage: string
     lastMessageDateNumber: number
-    status: Status
-    lastMessageSeen: boolean
     lastMessageFromId: string
+    status: Status
 }
-
-export { Contact }
