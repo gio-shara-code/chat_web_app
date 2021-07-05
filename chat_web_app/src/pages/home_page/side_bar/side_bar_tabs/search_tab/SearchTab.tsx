@@ -1,17 +1,16 @@
 import React, { useContext, useState } from 'react'
 import { User } from '../../../../../interfaces/user'
 import FoundUserList from './found_user_list/FoundUserList'
-import { getUser, getUsersByName } from '../../../../../api/user_api'
+import { getUsersByName } from '../../../../../api/user_api'
 import { TokenContext } from '../../../../../context/token_context'
 import { UserSearchingState } from '../../../../../enums/user_searching_state'
-import { dummyUsers } from './found_user_list/dummy_user_list'
 
 const searchTab = () => {
     const token = useContext(TokenContext)
 
     const [error, setError] = useState<string>('')
     const [searchedName, setSearchName] = useState<string>('')
-    const [foundUsers, setFoundUsers] = useState<User[]>(dummyUsers)
+    const [foundUsers, setFoundUsers] = useState<User[]>([])
     const [userSearchingState, setUserSearchingState] = useState<UserSearchingState>(UserSearchingState.notSearching)
 
     const onSearchContactInputChange = (e: any) => {
@@ -25,8 +24,10 @@ const searchTab = () => {
         if (res.success) {
             if (res.users?.length !== 0) {
                 setUserSearchingState(UserSearchingState.found)
+                console.log(res.users)
                 setFoundUsers(res.users as User[])
             } else {
+                console.log(res.users)
                 setUserSearchingState(UserSearchingState.notFound)
             }
         } else {
@@ -34,6 +35,8 @@ const searchTab = () => {
             setError(res.message as string)
         }
     }
+
+    
 
     const onSearchContactInputKeyDown = async (e: any) => {
         if (e.code === 'Enter') {
