@@ -15,7 +15,7 @@ const contactCard: React.FC<Props> = ({ isCurrentCard = false, contact, onClick 
         <div className="w-full py-4 ">
             <div className={`flex rounded-2xl p-4 ${isCurrentCard && 'bg-dark-blue'} cursor-pointer`} onClick={onClick}>
                 <div className="pr-4">
-                    <AvatarImage status={contact.status} src={'https://image.gala.de/22089206/t/pA/v6/w1440/r0/-/style-heidi-klum-1.jpg'} alt="Contact Picture" />
+                    <AvatarImage height="h-55" width="w-55" status={contact.status} src={'https://image.gala.de/22089206/t/pA/v6/w1440/r0/-/style-heidi-klum-1.jpg'} alt="Contact Picture" />
                 </div>
                 <div className="flex-1 flex flex-col overflow-hidden">
                     <div className="flex justify-between">
