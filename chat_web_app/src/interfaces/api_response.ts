@@ -5,4 +5,5 @@ export interface ApiResponse {
     message?: string
     token?: string
     user?: User
+    users?: User[]
 }
