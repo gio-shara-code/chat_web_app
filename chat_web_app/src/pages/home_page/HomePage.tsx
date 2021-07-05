@@ -6,6 +6,7 @@ import { User } from '../../interfaces/user'
 import { getUser } from '../../api/user_api'
 import { TokenContext } from '../../context/token_context'
 import { UserContext } from '../../context/user_context'
+
 const HomePage = () => {
     const [selectedContactId, setSelectedContactId] = useState<string>('')
     const [user, setUser] = useState<User | undefined>()
@@ -25,7 +26,7 @@ const HomePage = () => {
                 console.log(res.message)
             }
             toggleLoadingProcess()
-        }, 2000)
+        }, 250)
     }
 
     const componentDidMount = () => {
