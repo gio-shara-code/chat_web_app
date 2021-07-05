@@ -6,6 +6,8 @@ module.exports = {
             textColor: {
                 'black-hell': '#52585D',
                 white: '#FDFDFE',
+                'hell-blue': '#E3F6FC',
+                'dark-blue': '#6588DE',
                 gray: '#96A9BA',
             },
             padding: {
@@ -14,15 +16,15 @@ module.exports = {
             width: {
                 55: '55px',
                 100: '100px',
+                200: '200px',
             },
             height: {
                 55: '55px',
+                100: '100px',
+                200: '200px',
             },
             maxWidth: {
                 350: '350px',
-                40: '40px',
-            },
-            maxHeight: {
                 40: '40px',
             },
             borderWidth: {
