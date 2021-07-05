@@ -4,8 +4,6 @@ import AttachmentIcon from '../../../assets/icons/attachment.svg'
 import VoiceIcon from '../../../assets/icons/voice.svg'
 import SendIcon from '../../../assets/icons/send.svg'
 
-
-
 const ChatController = () => {
     return (
         <div className="p-5">
@@ -26,7 +24,7 @@ const ChatController = () => {
                     </div>
                     <button className="flex items-center bg-dark-blue rounded-lg px-4 py-2 outline-none border-none">
                         <span className="text-white text-sm pr-2">Send</span>
-                        <SendIcon />
+                        <SendIcon fill="white" />
                     </button>
                 </div>
             </div>
