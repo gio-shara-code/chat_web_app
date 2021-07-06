@@ -16,7 +16,7 @@ const MessageText: React.FC<Props> = ({ message, itsMe, onProfileClick }) => {
             <div className={`flex flex-col items-${itsMe ? 'end' : 'start'} bg-${itsMe ? 'red-200' : 'hell-blue'} p-5 max-w-screen-sm rounded-2xl rounded-t${itsMe ? 'r' : 'l'}-none`}>
                 {message.content}
                 <div className={`flex justify-end items-center w-full`}>
-                    <span className={`${itsMe ? 'pr-3' : ''}`}>{formatDateNumberToHourMinute(message.sentOn)}</span>
+                    <span className={`text-xs text-gray ${itsMe ? 'pr-3' : ''}`}>{formatDateNumberToHourMinute(message.sentOn)}</span>
                     {itsMe && <SeenMessageIcon />}
                 </div>
             </div>
