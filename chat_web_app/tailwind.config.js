@@ -20,6 +20,7 @@ module.exports = {
                 inherit: 'inherit',
             },
             height: {
+                inherit: 'inherit',
                 55: '55px',
                 100: '100px',
                 200: '200px',
