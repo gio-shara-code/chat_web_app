@@ -17,6 +17,7 @@ module.exports = {
                 55: '55px',
                 100: '100px',
                 200: '200px',
+                inherit: 'inherit',
             },
             height: {
                 55: '55px',
@@ -24,7 +25,9 @@ module.exports = {
                 200: '200px',
             },
             maxWidth: {
+                '30%': '30%',
                 350: '350px',
+                450: '450px',
                 40: '40px',
             },
             borderWidth: {
@@ -51,7 +54,9 @@ module.exports = {
         borderColor: (theme) => ({
             ...theme('colors'),
             yellow: '#F3BA4A',
+            'dark-blue': '#6588DE',
         }),
+
         fontFamily: {
             poppins: ['Poppins'],
         },
