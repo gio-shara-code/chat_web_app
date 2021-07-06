@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import ContactList from './contact_list/ContactList'
-import CustomScrollBar from './CustomScrollBar'
+import CustomScrollBar from '../../../../../components/DarkBlueScrollbar'
 
 const MessagedContactsTab = () => {
     const contactListDivRef = useRef<HTMLDivElement>(null)
