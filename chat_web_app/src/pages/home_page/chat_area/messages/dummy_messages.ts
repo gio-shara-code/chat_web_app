@@ -3,12 +3,12 @@ import { MessageType } from '../../../../enums/message_type'
 import { Message } from '../../../../interfaces/message'
 const dummyMessages: Message[] = [
     {
-        content: 'Hey!',
+        content: 'Hey.',
         sentFromId: '60e18edcc927042d64d72d38',
         sentOn: Date.now(),
         type: MessageType.message,
         id: v4(),
-        author: 'Giorgi',
+        author: 'Kierra Press',
         authorProfileImage: '',
     },
     {
@@ -17,7 +17,7 @@ const dummyMessages: Message[] = [
         sentOn: Date.now(),
         type: MessageType.message,
         id: v4(),
-        author: 'Giorgi',
+        author: 'Kierra Press',
         authorProfileImage: '',
     },
     {
@@ -26,7 +26,7 @@ const dummyMessages: Message[] = [
         sentOn: Date.now(),
         type: MessageType.message,
         id: v4(),
-        author: 'Giorgi',
+        author: 'Kierra Press',
         authorProfileImage: '',
     },
 ]
